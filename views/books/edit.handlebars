@@ -1,0 +1,25 @@
+<div class="tought-form-container">
+    <a href="/books">Voltar</a>
+    <h1 class="title">Editando o livro {{book.name}}</h1>
+    <form action="/books/edit" method="POST">
+    <input type="hidden" name="id" value="{{book.id}}">
+        <div class="field">
+            <label class="label">Nome</label>
+            <div class="control">
+                <input class="input" type="text" id="name" name="name" value="{{book.name}}" />
+            </div>
+            <label class="label">Data da leitura</label>
+            <div class="control">
+                <input id="dateRead" name="dateRead" type="date" value={{book.readDate}} />
+            </div>
+            <label class="label">Descrição do livro</label>
+            <div class="control">
+                <textarea id="description" name="description" class="textarea is-primary">{{book.description}}</textarea>
+            </div>
+            <div class="field is-grouped">
+                <div class="control">
+                    <button class="button is-small is-link">Cadastrar</button>
+                </div>
+            </div>
+    </form>
+</div>

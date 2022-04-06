@@ -1,0 +1,31 @@
+<div class="card">
+  {{#each books}}
+    <header class="card-header">
+      <p class="card-header-title">
+        {{this.name}}
+      </p>
+      <button class="card-header-icon" aria-label="more options">
+        <span class="icon">
+          <i class="fas fa-angle-down" aria-hidden="true"></i>
+        </span>
+      </button>
+    </header>
+    <div class="card-content">
+      <div class="content">
+        <p>{{this.description}}</p>
+        <hr />
+        <p>Data da leitura: {{this.readDate}}</p>
+      </div>
+    </div>
+
+    <footer class="card-footer">
+      <form action="/books/delete" method="POST">
+        <input type="hidden" name="id" value="{{this.id}}" />
+        <input type="submit" value="Excluir" class="card-footer-item" />
+      </form>
+      <div>
+        <a href="/books/edit/{{this.id}}">Editar</a>
+      </div>
+    </footer>
+  {{/each}}
+</div>
